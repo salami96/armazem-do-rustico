@@ -4,20 +4,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular/universal-starter.git"
+    "url": "https://github.com/salami96/armazem-do-rustico.git"
   },
   "contributors": [
-    "AngularClass <hello@angularclass.com>",
-    "PatrickJS <patrick@angularclass.com>",
-    "Jeff Whelpley <jeff@gethuman.com>",
-    "Jeff Cross <crossj@google.com>",
-    "Mark Pieszak <mpieszak84@gmail.com>",
-    "Jason Jean <jasonjean1993@gmail.com>",
-    "Fabian Wiles <fabian.wiles@gmail.com>"
+    "AngularClass <gabriel.zanatto2@gmail.com>",
+    "Guilherme Menezes Pacheco <gui.mp@live.com>"
   ],
   "scripts": {
     "ng": "ng",
-    "start": "ng serve:prerender",
+    "start": "npm run serve:prerender",
     "build": "ng build",
     "lint": "ng lint armazem-do-rustico",
     "build:client-and-server-bundles": "ng build --prod && ng run armazem-do-rustico:server:production",
