@@ -29,6 +29,7 @@ import { IconsModule } from './icons/icons.module';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'produtos', component: ProductsComponent },
+      { path: 'produtos/:id', component: ProductComponent },
     ]),
     TransferHttpCacheModule,
     IconsModule,
