@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --main-color: #5c3534;
+    --main-color: #4a2718;
+}
+@media (max-width: 576px){
+    .page {
+        margin-top: 5% !important;
+    }
+}
+@media (max-width: 366px){
+    .page {
+        margin-top: 20% !important;
+    }
+}
+h2.text-info {
+    color: var(--main-color) !important;
 }
