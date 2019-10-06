@@ -1,9 +1,12 @@
 <main class="page">
   <section class="clean-block slider">
       <div class="container">
-          <div class="block-heading">
-              <h2 class="text-info">Produto {{id}}</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+          <div class="block-heading text-left">
+              <h2 class="text-info">
+                  <button class="btn btn-outline-brown btn-sm" [routerLink]="['/produtos']" routerLinkActive="router-link-active" ><i-arrow-left></i-arrow-left></button>
+                  Produto {{id}}
+              </h2>
+              <h5>Descrição</h5>
           </div>
           <div class="carousel slide" data-ride="carousel" id="carousel-1">
               <div class="carousel-inner" role="listbox">

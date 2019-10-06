@@ -5,14 +5,32 @@
 }
 @media (max-width: 576px){
     .page {
-        margin-top: 5% !important;
+        margin-top: 10% !important;
     }
 }
 @media (max-width: 366px){
     .page {
-        margin-top: 20% !important;
+        margin-top: 15% !important;
     }
 }
 h2.text-info {
     color: var(--main-color) !important;
+}
+.btn-brown {
+    background-color: var(--main-color);
+    border-color: white !important;
+    color: white !important;
+}
+.btn-brown:hover {
+    background-color: var(--acc-color);
+}
+.btn-outline-brown {
+    background-color: white;
+    border-color: var(--main-color) !important;
+    color: var(--main-color) !important;
+}
+.btn-outline-brown:hover {
+    background-color: var(--main-color);
+    color: white !important;
+    border-color: white;
 }

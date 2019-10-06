@@ -6,3 +6,15 @@
     -webkit-transform: scale(1.05);
     transform: scale(1.05)
 }
+
+.active {
+    color: white !important;
+    background-color: var(--acc-color);
+}
+
+.btn-toolbar {
+    justify-content: center;
+}
+.btn-toolbar label {
+    margin: 0 1px 1px 1px;
+}

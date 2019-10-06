@@ -10,7 +10,8 @@ import {
   IconSmartphone,
   IconMail,
   IconPlus,
-  IconCalendar
+  IconCalendar,
+  IconArrowLeft
 } from 'angular-feather';
 
 const icons = [
@@ -24,6 +25,7 @@ const icons = [
   IconSmartphone,
   IconMail,
   IconPlus,
+  IconArrowLeft,
   IconCalendar
 ];
 

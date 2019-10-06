@@ -1,14 +1,15 @@
 .brown {
     background-color: var(--main-color)!important;
 }
-.btn-outline-brown {
-    background-color: var(--main-color);
-    border-color: white;
-    color: white !important;
-}
-.btn-outline-brown:hover {
-    background-color: var(--acc-color);
-}
+
 .active {
     background-color: var(--acc-color);
+}
+.logo img {
+    max-height: 50px;
+}
+@media (max-width: 576px){
+    .logo img {
+        max-width: 200px;
+    }
 }
