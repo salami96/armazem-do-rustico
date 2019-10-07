@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "ng": "ng",
-    "start": "npm run serve:prerender",
+    "start": "npm run serve:ssr",
     "build": "ng build",
     "lint": "ng lint armazem-do-rustico",
     "build:client-and-server-bundles": "ng build --prod && ng run armazem-do-rustico:server:production",
@@ -22,7 +22,7 @@
     "generate:prerender": "cd dist && node prerender",
     "serve:prerender": "cd dist/browser && http-server",
     "serve:ssr": "node dist/server",
-    "postinstall": "npm run build:prerender"
+    "postinstall": "npm run build:ssr"
   },
   "pre-commit": [],
   "private": true,
