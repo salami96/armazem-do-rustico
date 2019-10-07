@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { IconsModule } from './icons/icons.module';
 import { LoginComponent } from './login/login.component';
+import { NewProductComponent } from './new-product/new-product.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import { LoginComponent } from './login/login.component';
     E404Component,
     FooterComponent,
     LoginComponent,
+    NewProductComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'produtos', component: ProductsComponent },
-      { path: 'login', component: LoginComponent },
+      { path: 'entrar', component: LoginComponent },
+      { path: 'novo-produto', component: NewProductComponent },
       { path: 'produtos/:id', component: ProductComponent },
       { path: '**', component: E404Component },
       { path: 'e404', component: E404Component },
