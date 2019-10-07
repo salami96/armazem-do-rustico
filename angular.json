@@ -164,7 +164,9 @@
       "inlineStyle": false,
       "inlineTemplate": false,
       "prefix": "app",
-      "styleext": "css"
+      "styleext": "css",
+      "project": "armazem-do-rustico",
+      "module": "app"
     },
     "@schematics/angular:directive": {
       "spec": false,

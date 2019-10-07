@@ -12,6 +12,7 @@ import { E404Component } from './e404/e404.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { IconsModule } from './icons/icons.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +23,17 @@ import { IconsModule } from './icons/icons.module';
     ProductsComponent,
     E404Component,
     FooterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'produtos', component: ProductsComponent },
+      { path: 'login', component: LoginComponent },
       { path: 'produtos/:id', component: ProductComponent },
       { path: '**', component: E404Component },
+      { path: 'e404', component: E404Component },
     ]),
     TransferHttpCacheModule,
     IconsModule,

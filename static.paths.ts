@@ -2,6 +2,6 @@ export const ROUTES = [
   '/',
   '/home',
   '/produtos',
-  '/produtos/:id',
-  '**'
+  // '/produtos/:id',
+  '/e404'
 ];
