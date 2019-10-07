@@ -27,9 +27,9 @@ import { IconsModule } from './icons/icons.module';
     BrowserModule.withServerTransition({appId: 'my-app'}),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
       { path: 'produtos', component: ProductsComponent },
       { path: 'produtos/:id', component: ProductComponent },
+      { path: '**', component: E404Component },
     ]),
     TransferHttpCacheModule,
     IconsModule,

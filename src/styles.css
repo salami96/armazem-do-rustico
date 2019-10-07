@@ -13,24 +13,24 @@
         margin-top: 15% !important;
     }
 }
-h2.text-info {
+h2.text-info, .text-brown {
     color: var(--main-color) !important;
 }
 .btn-brown {
-    background-color: var(--main-color);
+    background-color: var(--main-color) !important;
     border-color: white !important;
     color: white !important;
 }
 .btn-brown:hover {
-    background-color: var(--acc-color);
+    background-color: var(--acc-color) !important;
 }
 .btn-outline-brown {
-    background-color: white;
+    background-color: white !important;
     border-color: var(--main-color) !important;
     color: var(--main-color) !important;
 }
 .btn-outline-brown:hover {
-    background-color: var(--main-color);
+    background-color: var(--main-color) !important;
     color: white !important;
     border-color: white;
 }

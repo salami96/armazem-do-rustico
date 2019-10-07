@@ -9,7 +9,7 @@
 
 .active {
     color: white !important;
-    background-color: var(--acc-color);
+    background-color: var(--main-color) !important;
 }
 
 .btn-toolbar {

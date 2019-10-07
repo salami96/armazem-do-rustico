@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  title = 'Todos os Móveis';
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setTitle(text: string) {
+    this.title = text;
   }
 
 }

@@ -2,28 +2,28 @@
   <section class="clean-block clean-services">
       <div class="container">
           <div class="block-heading">
-              <h2 class="text-info">Todos os produtos</h2>
+              <h2 class="text-info">{{title}}</h2>
               <div role="group" data-toggle="buttons" class="btn-toolbar btn-group-toggle">
-                <label class="btn btn-outline-brown active">
-                    <input type="radio" name="options" id="Todos" autocomplete="off" checked> Todos
+                <label class="btn btn-outline-brown active" (click)="setTitle('Todos os Móveis')">
+                  <input type="radio" checked>Todos
                 </label>
-                <label class="btn btn-outline-brown">
-                  <input type="radio" name="options" id="Mesas" autocomplete="off"> Mesas
+                <label class="btn btn-outline-brown" (click)="setTitle('Mesas')">
+                  <input type="radio">Mesas
                 </label>
-                <label class="btn btn-outline-brown">
-                  <input type="radio" name="options" id="Cadeiras" autocomplete="off"> Cadeiras
+                <label class="btn btn-outline-brown" (click)="setTitle('Cadeiras')">
+                  <input type="radio">Cadeiras
                 </label>
-                <label class="btn btn-outline-brown">
-                  <input type="radio" name="options" id="Portas" autocomplete="off"> Portas
+                <label class="btn btn-outline-brown" (click)="setTitle('Portas')">
+                  <input type="radio">Portas
                 </label>
-                <label class="btn btn-outline-brown">
-                  <input type="radio" name="options" id="Janelas" autocomplete="off"> Janelas
+                <label class="btn btn-outline-brown" (click)="setTitle('Janelas')">
+                  <input type="radio">Janelas
                 </label>
-                <label class="btn btn-outline-brown">
-                  <input type="radio" name="options" id="Prateleiras" autocomplete="off"> Prateleiras
+                <label class="btn btn-outline-brown" (click)="setTitle('Prateleiras')">
+                  <input type="radio">Prateleiras
                 </label>
-                <label class="btn btn-outline-brown">
-                  <input type="radio" name="options" id="Gamelas" autocomplete="off"> Gamelas
+                <label class="btn btn-outline-brown" (click)="setTitle('Gamelas')">
+                  <input type="radio">Gamelas
                 </label>
               </div>
           </div>
