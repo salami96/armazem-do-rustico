@@ -34,3 +34,6 @@ h2.text-info, .text-brown {
     color: white !important;
     border-color: white;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

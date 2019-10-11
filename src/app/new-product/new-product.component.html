@@ -7,8 +7,16 @@
             <form>
                 <div class="form-group"><label for="nome">Nome</label><input class="form-control item" type="text" id="nome"></div>
                 <div class="form-group"><label for="password">Categoria</label><input class="form-control" type="password" id="password"></div>
-
-                <button class="btn btn-primary btn-block" type="submit">Acessar</button></form>
+                <mat-form-field appearance="outline">
+                    <label for="img">Fotos do Produto</label>
+                    <ngx-mat-file-input name="img" id="img" [(ngModel)]="img" placeholder="Até 5 imagens..." [accept]="['.png','.jpg','.jpeg','.gif']" class="input-img" multiple>
+                    </ngx-mat-file-input>
+                    <mat-hint>Até 5 imagens</mat-hint>
+                    <div class="text-right i-image">
+                        <i-image></i-image>
+                    </div>
+                </mat-form-field>
+                <button class="btn btn-outline-brown btn-block mt-5" type="submit">Acessar</button></form>
         </div>
     </section>
   </main>

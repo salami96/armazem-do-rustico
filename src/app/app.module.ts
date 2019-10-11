@@ -14,6 +14,13 @@ import { FooterComponent } from './footer/footer.component';
 import { IconsModule } from './icons/icons.module';
 import { LoginComponent } from './login/login.component';
 import { NewProductComponent } from './new-product/new-product.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatProgressBarModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -33,13 +40,19 @@ import { NewProductComponent } from './new-product/new-product.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'produtos', component: ProductsComponent },
       { path: 'entrar', component: LoginComponent },
-      { path: 'novo-produto', component: NewProductComponent },
+      { path: 'novo/produto', component: NewProductComponent },
       { path: 'produtos/:id', component: ProductComponent },
       { path: '**', component: E404Component },
       { path: 'e404', component: E404Component },
     ]),
     TransferHttpCacheModule,
     IconsModule,
+    BrowserAnimationsModule,
+    MaterialFileInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    HttpClientModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

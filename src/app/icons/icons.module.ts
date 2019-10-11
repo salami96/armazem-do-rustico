@@ -11,7 +11,8 @@ import {
   IconMail,
   IconPlus,
   IconCalendar,
-  IconArrowLeft
+  IconArrowLeft,
+  IconImage
 } from 'angular-feather';
 
 const icons = [
@@ -26,7 +27,8 @@ const icons = [
   IconMail,
   IconPlus,
   IconArrowLeft,
-  IconCalendar
+  IconCalendar,
+  IconImage
 ];
 
 @NgModule({

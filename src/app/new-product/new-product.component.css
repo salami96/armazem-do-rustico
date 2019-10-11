@@ -1,3 +1,18 @@
 form {
     border-color: var(--main-color) !important;
 }
+.input-img{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90% !important;
+}
+mat-form-field {
+    width: 100%;
+}
+.i-image {
+    padding-bottom: 5px;
+}
+mat-form-field label {
+    padding-top: 10px;
+}
