@@ -7,11 +7,23 @@ import { FileInput } from 'ngx-material-file-input';
   styleUrls: ['./new-product.component.css']
 })
 export class NewProductComponent implements OnInit {
+  nome: string;
   img: FileInput[] = null;
   files: File[];
+  categoria = 'Mesas';
+  loading = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setTitle(text: string) {
+    this.categoria = text;
+  }
+
+  createProd() {
+    this.loading = true;
   }
 
 }

@@ -5,10 +5,33 @@
                 <h2 class="text-info">Novo Produto</h2>
             </div>
             <form>
-                <div class="form-group"><label for="nome">Nome</label><input class="form-control item" type="text" id="nome"></div>
-                <div class="form-group"><label for="password">Categoria</label><input class="form-control" type="password" id="password"></div>
                 <mat-form-field appearance="outline">
-                    <label for="img">Fotos do Produto</label>
+                    <mat-label>Nome do Produto</mat-label>
+                    <input name="nome" placeholder="Mesinha de Centro" matInput type="text">
+                </mat-form-field>
+                <span>Categoria do produto</span>
+                <div role="group" data-toggle="buttons" class="btn-toolbar btn-group-toggle mt-2">
+                    <label class="btn btn-outline-brown active" (click)="setTitle('Mesas')">
+                        <input type="radio" checked>Mesas
+                    </label>
+                    <label class="btn btn-outline-brown" (click)="setTitle('Cadeiras')">
+                        <input type="radio">Cadeiras
+                    </label>
+                    <label class="btn btn-outline-brown" (click)="setTitle('Portas')">
+                        <input type="radio">Portas
+                    </label>
+                    <label class="btn btn-outline-brown" (click)="setTitle('Janelas')">
+                        <input type="radio">Janelas
+                    </label>
+                    <label class="btn btn-outline-brown" (click)="setTitle('Prateleiras')">
+                        <input type="radio">Prateleiras
+                    </label>
+                    <label class="btn btn-outline-brown" (click)="setTitle('Gamelas')">
+                        <input type="radio">Gamelas
+                    </label>
+                </div>
+                <mat-form-field appearance="outline" class="mt-2">
+                    <mat-label>Fotos do Produto</mat-label>
                     <ngx-mat-file-input name="img" id="img" [(ngModel)]="img" placeholder="Até 5 imagens..." [accept]="['.png','.jpg','.jpeg','.gif']" class="input-img" multiple>
                     </ngx-mat-file-input>
                     <mat-hint>Até 5 imagens</mat-hint>
@@ -16,7 +39,12 @@
                         <i-image></i-image>
                     </div>
                 </mat-form-field>
-                <button class="btn btn-outline-brown btn-block mt-5" type="submit">Acessar</button></form>
+                <iframe [hidden]="false" class="loading" src="https://mdbootstrap.com/api/snippets/embed/1298583/fullscreen" frameborder="0"></iframe>
+                <button class="btn btn-outline-brown btn-block mt-3" (click)="createProd()">
+                    <i-save></i-save>
+                     Salvar
+                </button>
+            </form>
         </div>
     </section>
   </main>

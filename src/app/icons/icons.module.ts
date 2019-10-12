@@ -12,12 +12,15 @@ import {
   IconPlus,
   IconCalendar,
   IconArrowLeft,
-  IconImage
+  IconImage,
+  IconSave,
+  IconUserX
 } from 'angular-feather';
 
 const icons = [
   IconMenu,
   IconUser,
+  IconUserX,
   IconXSquare,
   IconDollarSign,
   IconMap,
@@ -28,7 +31,8 @@ const icons = [
   IconPlus,
   IconArrowLeft,
   IconCalendar,
-  IconImage
+  IconImage,
+  IconSave
 ];
 
 @NgModule({

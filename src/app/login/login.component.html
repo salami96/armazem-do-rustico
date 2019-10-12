@@ -25,11 +25,16 @@
                     </div>
                 </div>
                 <iframe [hidden]="!loading" class="loading" src="https://mdbootstrap.com/api/snippets/embed/1298583/fullscreen" frameborder="0"></iframe>
-                <button class="btn btn-outline-brown btn-block" (click)="logar()" [disabled]="loading">Acessar</button>
+                <button class="btn btn-outline-brown btn-block" (click)="logar()" [disabled]="loading">
+                    <i-user></i-user>
+                    Acessar
+                </button>
             </form>
             <form *ngIf="nome !== null">
                 <h2 class="text-info">Você já está conectado!</h2>
-                <button class="btn btn-outline-brown btn-block" (click)="deslogar()">Deseja desconectar?</button>
+                <button class="btn btn-outline-brown btn-block" (click)="deslogar()">
+                    <i-user-x></i-user-x>
+                    Deseja desconectar?</button>
             </form>
         </div>
     </section>
