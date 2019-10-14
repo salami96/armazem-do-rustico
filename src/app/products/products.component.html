@@ -28,11 +28,14 @@
               </div>
           </div>
           <div class="row">
-                <div class="col-md-6 col-lg-4" routerLink="/produtos/1">
-                  <div class="card clean-card"><img class="card-img-top w-100 d-block" src="assets/img/scenery/image5.jpg?h=5a16d46fccd884924ce66752802d76c5">
+                <div class="col-md-6 col-lg-4" routerLink="/produtos/{{products[0]._id}}">
+                  <div class="card clean-card">
+                    <a class="lightbox" href="{{products[0].img[0]}}">  
+                      <img class="card-img-top w-100 d-block" src="{{products[0].img[0]}}">
+                    </a>
                       <div class="card-body">
-                          <h4 class="card-title">Lorem Ipsum</h4>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in.</p>
+                          <h4 class="card-title">{{products[0].titulo}}</h4>
+                          <p class="card-text">{{products[0].descricao}}</p>
                       </div>
                       <div><button class="btn btn-outline-primary btn-sm" type="button">Learn More</button></div>
                   </div>

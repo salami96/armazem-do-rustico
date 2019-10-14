@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product.service';
+import { Product } from '../models/entities';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   title = 'Todos os Móveis';
-  constructor() { }
+  products: Product[];
+  constructor(private pService: ProductService) { }
 
   ngOnInit() {
+    this.pService.getProducts().subscribe(resp => this.products = resp);
   }
 
   setTitle(text: string) {

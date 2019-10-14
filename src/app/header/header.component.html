@@ -15,17 +15,21 @@
               Produtos
             </a>
           </li>
-          <li class="nav-item">
-            <a role="button" class="nav-link btn-sm btn btn-brown" 
-            routerLinkActive="active" routerLink="/entrar">
-            <i-user *ngIf="uService.user === null"></i-user>
-            <i-user-x *ngIf="uService.user !== null"></i-user-x>
-            </a>
-          </li>
           <li class="nav-item" *ngIf="uService.user !== null">
             <a role="button" class="nav-link btn-sm btn btn-brown" 
             routerLinkActive="active" routerLink="/novo/produto">
-              <i-plus></i-plus>
+              Novo Produto
+            </a>
+          </li>
+          <li class="nav-item">
+            <a role="button" class="nav-link btn-sm btn btn-brown" 
+            routerLinkActive="active" routerLink="/entrar">
+            <div *ngIf="uService.user === null">
+              <i-user></i-user>
+            </div>
+            <div *ngIf="uService.user !== null">
+              Sair
+            </div>
             </a>
           </li>
         </ul>

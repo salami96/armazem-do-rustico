@@ -7,8 +7,9 @@
             <form>
                 <mat-form-field appearance="outline">
                     <mat-label>Nome do Produto</mat-label>
-                    <input name="nome" placeholder="Mesinha de Centro" matInput type="text">
+                    <input name="nome" [(ngModel)]="nome" placeholder="Mesinha de Centro" matInput type="text">
                 </mat-form-field>
+                <div role="alert" class="alert alert-danger mx-auto" [hidden]="!erroNome">O campo nome do produto é obrigatório!</div>
                 <span>Categoria do produto</span>
                 <div role="group" data-toggle="buttons" class="btn-toolbar btn-group-toggle mt-2">
                     <label class="btn btn-outline-brown active" (click)="setTitle('Mesas')">
@@ -39,8 +40,9 @@
                         <i-image></i-image>
                     </div>
                 </mat-form-field>
-                <iframe [hidden]="false" class="loading" src="https://mdbootstrap.com/api/snippets/embed/1298583/fullscreen" frameborder="0"></iframe>
-                <button class="btn btn-outline-brown btn-block mt-3" (click)="createProd()">
+                <div role="alert" class="alert alert-danger mx-auto" [hidden]="!erroImg">{{erroImgMsg}}</div>
+                <iframe [hidden]="!loading" class="loading" src="https://mdbootstrap.com/api/snippets/embed/1298583/fullscreen" frameborder="0"></iframe>
+                <button class="btn btn-outline-brown btn-block mt-3" (click)="createProd()" [disabled]="loading">
                     <i-save></i-save>
                      Salvar
                 </button>

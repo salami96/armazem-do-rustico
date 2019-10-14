@@ -1,14 +1,9 @@
-export interface Prom {
+export interface Product {
     _id: string;
-    titulo: string;
+    nome: string;
     descricao: string;
     img: string[];
-    data: Date;
-    dataFinal: Date;
-    autor: User;
     loja: string;
-    arquivo: string[];
-    isEvent: boolean;
   }
 export interface User {
     _id: string;
