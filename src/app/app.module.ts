@@ -19,7 +19,7 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatProgressBarModule } from '@angular/material';
+import { MatProgressBarModule, MatInputModule } from '@angular/material';
 
 
 @NgModule({
@@ -52,7 +52,8 @@ import { MatProgressBarModule } from '@angular/material';
     MatFormFieldModule,
     FormsModule,
     HttpClientModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

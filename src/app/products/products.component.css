@@ -1,17 +1,14 @@
 .card {
     transition: .2s ease-in-out;
 }
-
 .card:hover {
     -webkit-transform: scale(1.05);
     transform: scale(1.05)
 }
-
 .active {
     color: white !important;
     background-color: var(--main-color) !important;
 }
-
 .btn-toolbar {
     justify-content: center;
 }
