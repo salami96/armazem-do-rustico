@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-black brown clean-navbar">
+  <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-black brown clean-navbar">
     <div class="container">
       <a class="navbar-brand logo btn" routerLink="/">
         <img src="assets/img/logo.png">
@@ -9,7 +9,25 @@
       </button>
       <div class="collapse navbar-collapse" id="navcol-1">
         <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item"><a role="button" class="nav-link btn-sm btn btn-brown" routerLinkActive="active" routerLink="/produtos">Produtos</a></li>
+          <li class="nav-item">
+            <a role="button" class="nav-link btn-sm btn btn-brown" 
+            routerLinkActive="active" routerLink="/produtos">
+              Produtos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a role="button" class="nav-link btn-sm btn btn-brown" 
+            routerLinkActive="active" routerLink="/entrar">
+            <i-user *ngIf="uService.user === null"></i-user>
+            <i-user-x *ngIf="uService.user !== null"></i-user-x>
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="uService.user !== null">
+            <a role="button" class="nav-link btn-sm btn btn-brown" 
+            routerLinkActive="active" routerLink="/novo/produto">
+              <i-plus></i-plus>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
