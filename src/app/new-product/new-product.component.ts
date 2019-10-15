@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FileInput } from 'ngx-material-file-input';
 import { ProductService } from '../services/product.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-new-product',
@@ -17,7 +19,7 @@ export class NewProductComponent implements OnInit {
   erroNome = false;
   erroImgMsg = 'Imagem com problema!';
 
-  constructor(private pService: ProductService) { }
+  constructor(private pService: ProductService, public snack: MatSnackBar, public router: Router) { }
 
   ngOnInit() {
   }
@@ -30,7 +32,7 @@ export class NewProductComponent implements OnInit {
     this.erroNome = this.nome === null || this.nome === '';
     this.validImg();
     if (!this.erroNome && !this.erroImg) {
-      this.loading = true;
+      this.openSnack('create prod');
       this.loading = true;
       let paths: string[];
       this.pService.makeFileRequest(this.files).then(resp => {
@@ -43,14 +45,12 @@ export class NewProductComponent implements OnInit {
         ).subscribe(response => {
           console.log(response);
           this.loading = false;
-          alert('tudokey');
-          // this.openSnack('Sucesso ao criar a nova promoção!', 'Ir para Promoções');
+          this.openSnack('Sucesso ao criar a novo produto!', 'Ver Produto', response._id);
         });
       }).catch(erro => {
         console.log(erro);
         this.loading = false;
-        alert('deomerds');
-        // this.openSnack(erro);
+        this.openSnack(erro);
       });
     }
   }
@@ -75,6 +75,12 @@ export class NewProductComponent implements OnInit {
       }
     });
   this.erroImg = !(erro);
+  }
+
+  openSnack(msg: string, action?: string, id?: string) {
+    this.snack.open(msg, action, {duration: 10000}).onAction().subscribe(() => {
+      this.router.navigate(['/produtos/' + id]);
+    });
   }
 
 }
