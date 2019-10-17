@@ -7,11 +7,26 @@
 }
 .active {
     color: white !important;
-    background-color: var(--main-color) !important;
+    background-color: var(--acc-color) !important;
 }
 .btn-toolbar {
     justify-content: center;
 }
 .btn-toolbar label {
-    margin: 0 1px 1px 1px;
+    margin: 0 2px 1px 2px;
+}
+.wpp{
+    height: 1.5rem;
+}
+.btn-toolbar {
+    width: 100%;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.block-heading {
+    padding: 5px;
+    margin: 5px;
 }

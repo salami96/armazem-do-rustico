@@ -1,90 +1,50 @@
+<nav role="toolbar" data-toggle="buttons" class="sticky-top btn-toolbar btn-group-toggle">
+  <label class="btn btn-outline-brown active" (click)="setTitle('Todos os Móveis')">
+    <input type="radio" checked>Todos
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Mesas')">
+    <input type="radio">Mesas
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Cadeiras')">
+    <input type="radio">Cadeiras
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Portas')">
+    <input type="radio">Portas
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Janelas')">
+    <input type="radio">Janelas
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Prateleiras')">
+    <input type="radio">Prateleiras
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Gamelas')">
+    <input type="radio">Gamelas
+  </label>
+</nav>
 <main class="page service-page">
   <section class="clean-block clean-services">
       <div class="container">
           <div class="block-heading">
               <h2 class="text-info">{{title}}</h2>
-              <div role="group" data-toggle="buttons" class="btn-toolbar btn-group-toggle">
-                <label class="btn btn-outline-brown active" (click)="setTitle('Todos os Móveis')">
-                  <input type="radio" checked>Todos
-                </label>
-                <label class="btn btn-outline-brown" (click)="setTitle('Mesas')">
-                  <input type="radio">Mesas
-                </label>
-                <label class="btn btn-outline-brown" (click)="setTitle('Cadeiras')">
-                  <input type="radio">Cadeiras
-                </label>
-                <label class="btn btn-outline-brown" (click)="setTitle('Portas')">
-                  <input type="radio">Portas
-                </label>
-                <label class="btn btn-outline-brown" (click)="setTitle('Janelas')">
-                  <input type="radio">Janelas
-                </label>
-                <label class="btn btn-outline-brown" (click)="setTitle('Prateleiras')">
-                  <input type="radio">Prateleiras
-                </label>
-                <label class="btn btn-outline-brown" (click)="setTitle('Gamelas')">
-                  <input type="radio">Gamelas
-                </label>
-              </div>
           </div>
           <div class="row">
-                <div class="col-md-6 col-lg-4" routerLink="/produtos/{{products[0]._id}}">
-                  <div class="card clean-card">
-                    <a class="lightbox" href="{{products[0].img[0]}}">  
-                      <img class="card-img-top w-100 d-block" src="{{products[0].img[0]}}">
-                    </a>
-                      <div class="card-body">
-                          <h4 class="card-title">{{products[0].titulo}}</h4>
-                          <p class="card-text">{{products[0].descricao}}</p>
-                      </div>
-                      <div><button class="btn btn-outline-primary btn-sm" type="button">Learn More</button></div>
-                  </div>
+            <div class="col-md-6 col-lg-4" *ngFor="let product of products">
+              <div class="card clean-card">
+                <img class="card-img-top w-100 d-block" src="{{product.img[0]}}" routerLink="/produtos/{{product._id}}">
+                <div class="card-body">
+                  <h4 class="card-title" routerLink="/produtos/{{product._id}}">{{product.titulo}}</h4>
+                  <p class="card-text" routerLink="/produtos/{{product._id}}">{{product.descricao}}</p>
+                </div>
+                <div>
+                  <a role="button" target="_blank" rel="noopener noreferrer" 
+                  href="https://wa.me/555136584137?text=Olá, estou interessado(a) no produto: oarmazemdorustico.com/produtos/{{product._id}}" 
+                  class="btn btn-outline-success btn-sm mb-4">
+                    <img src="/assets/img/wpp.png" class="wpp">
+                    Pedir no WhatsApp
+                  </a>
+                </div>
               </div>
-              <div class="col-md-6 col-lg-4" routerLink="/produtos/2">
-                  <div class="card clean-card"><img class="card-img-top w-100 d-block" src="assets/img/scenery/image6.jpg?h=26f762ae21fd9cce95e86763ac6154ca">
-                      <div class="card-body">
-                          <h4 class="card-title">Lorem Ipsum</h4>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in.</p>
-                      </div>
-                      <div><button class="btn btn-outline-primary btn-sm" type="button">Learn More</button></div>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-4" routerLink="/produtos/3">
-                  <div class="card clean-card"><img class="card-img-top w-100 d-block" src="assets/img/scenery/image1.jpg?h=323a7e5d8e12e9b60d93996156594f41">
-                      <div class="card-body">
-                          <h4 class="card-title">Lorem Ipsum</h4>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in.</p>
-                      </div>
-                      <div><button class="btn btn-outline-primary btn-sm" type="button">Learn More</button></div>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-4" routerLink="/produtos/4">
-                  <div class="card clean-card"><img class="card-img-top w-100 d-block" src="assets/img/scenery/image1.jpg?h=323a7e5d8e12e9b60d93996156594f41">
-                      <div class="card-body">
-                          <h4 class="card-title">Lorem Ipsum</h4>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in.</p>
-                      </div>
-                      <div><button class="btn btn-outline-primary btn-sm" type="button">Learn More</button></div>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-4" routerLink="/produtos/5">
-                  <div class="card clean-card"><img class="card-img-top w-100 d-block" src="assets/img/scenery/image5.jpg?h=5a16d46fccd884924ce66752802d76c5">
-                      <div class="card-body">
-                          <h4 class="card-title">Lorem Ipsum</h4>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in.</p>
-                      </div>
-                      <div><button class="btn btn-outline-primary btn-sm" type="button">Learn More</button></div>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-4" routerLink="/produtos/6">
-                  <div class="card clean-card"><img class="card-img-top w-100 d-block" src="assets/img/scenery/image6.jpg?h=26f762ae21fd9cce95e86763ac6154ca">
-                      <div class="card-body">
-                          <h4 class="card-title">Lorem Ipsum</h4>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in.</p>
-                      </div>
-                      <div><button class="btn btn-outline-primary btn-sm" type="button">Learn More</button></div>
-                  </div>
-              </div>
+            </div>
           </div>
       </div>
   </section>

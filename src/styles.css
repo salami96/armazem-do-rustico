@@ -3,16 +3,6 @@
     --main-color: #592E0B;
     --acc-color: #3F2212;
 }
-@media (max-width: 576px){
-    .page {
-        margin-top: 10% !important;
-    }
-}
-@media (max-width: 366px){
-    .page {
-        margin-top: 15% !important;
-    }
-}
 h2.text-info, .text-brown {
     color: var(--main-color) !important;
 }
