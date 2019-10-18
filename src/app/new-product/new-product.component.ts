@@ -32,7 +32,6 @@ export class NewProductComponent implements OnInit {
     this.erroNome = this.nome === null || this.nome === '';
     this.validImg();
     if (!this.erroNome && !this.erroImg) {
-      this.openSnack('create prod');
       this.loading = true;
       let paths: string[];
       this.pService.makeFileRequest(this.files).then(resp => {

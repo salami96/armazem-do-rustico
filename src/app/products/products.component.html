@@ -1,4 +1,5 @@
-<nav role="toolbar" data-toggle="buttons" class="sticky-top btn-toolbar btn-group-toggle">
+<nav role="toolbar" data-toggle="buttons" *ngIf="!search" class="navbar sticky-top btn-toolbar btn-group-toggle">
+  <button class="btn btn-outline-brown search-tg" (click)="search=true">Busca por nome <i-search></i-search></button>
   <label class="btn btn-outline-brown active" (click)="setTitle('Todos os Móveis')">
     <input type="radio" checked>Todos
   </label>
@@ -21,6 +22,20 @@
     <input type="radio">Gamelas
   </label>
 </nav>
+<nav role="toolbar" class="navbar sticky-top" *ngIf="search">
+  <div class="form-inline mx-auto input-group">
+    <div class="input-group-prepend">
+      <button class="btn btn-outline-brown" (click)="search=false">
+        <i-arrow-left></i-arrow-left>
+        Buscar por Categoria
+      </button>
+    </div>
+    <input class="form-control ml-2" [(ngModel)]="query" placeholder="Pesquisar produtos..." aria-label="Search">
+    <div class="input-group-append">
+      <button class="btn btn-outline-brown" (click)="searchName()"><i-search></i-search></button>
+    </div>
+  </div>
+</nav>
 <main class="page service-page">
   <section class="clean-block clean-services">
       <div class="container">
@@ -28,7 +43,7 @@
               <h2 class="text-info">{{title}}</h2>
           </div>
           <div class="row">
-            <div class="col-md-6 col-lg-4" *ngFor="let product of products">
+            <div class="col-md-6 col-lg-4" *ngFor="let product of filteredProducts">
               <div class="card clean-card">
                 <img class="card-img-top w-100 d-block" src="{{product.img[0]}}" routerLink="/produtos/{{product._id}}">
                 <div class="card-body">
@@ -42,6 +57,24 @@
                     <img src="/assets/img/wpp.png" class="wpp">
                     Pedir no WhatsApp
                   </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4" *ngIf="products === undefined">
+              <div class="card clean-card">
+                <img class="card-img-top w-100 d-block" src="/assets/img/loader.gif">
+                <div class="card-body">
+                  <h4 class="card-title">Aguarde</h4>
+                  <p class="card-text">Carregando produtos...</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4" *ngIf="filteredProducts.length === 0">
+              <div class="card clean-card">
+                <img class="card-img-top w-100 d-block confused m-auto pt-2" src="/assets/img/confused.png">
+                <div class="card-body">
+                  <h4 class="card-title">Nada Encontrado</h4>
+                  <p class="card-text">Não encontramos produtos com o filtro escolhido...</p>
                 </div>
               </div>
             </div>
