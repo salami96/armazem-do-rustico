@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../models/entities';
 import { ProductService } from '../services/product.service';
 
@@ -10,14 +10,18 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductComponent implements OnInit {
   product: Product;
-  constructor(private route: ActivatedRoute, private pService: ProductService) {  }
+  loading = true;
+  constructor(private route: ActivatedRoute, private pService: ProductService, private router: Router) {  }
 
   ngOnInit() {
     this.route.params.subscribe(res => {
       this.pService.getProduct(res.id).subscribe(resp => {
+        this.loading = false;
         this.product = resp;
+      }, error => {
+        console.log('ERRO: ' + error);
+        this.router.navigate(['/e404']);
       });
     });
   }
-
 }
