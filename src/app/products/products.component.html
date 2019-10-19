@@ -1,5 +1,7 @@
 <nav role="toolbar" data-toggle="buttons" *ngIf="!search" class="navbar sticky-top btn-toolbar btn-group-toggle">
-  <button class="btn btn-outline-brown search-tg" (click)="search=true">Busca por nome <i-search></i-search></button>
+  <button class="btn btn-outline-brown search-tg" (click)="search=true; setTitle('Todos os Móveis')">
+    Busca por nome <i-search></i-search>
+  </button>
   <label class="btn btn-outline-brown active" (click)="setTitle('Todos os Móveis')">
     <input type="radio" checked>Todos
   </label>
@@ -22,15 +24,16 @@
     <input type="radio">Gamelas
   </label>
 </nav>
-<nav role="toolbar" class="navbar sticky-top" *ngIf="search">
+<nav role="toolbar" class="navbar sticky-top btn-toolbar" *ngIf="search">
   <div class="form-inline mx-auto input-group">
     <div class="input-group-prepend">
-      <button class="btn btn-outline-brown" (click)="search=false">
-        <i-arrow-left></i-arrow-left>
-        Buscar por Categoria
+      <button class="btn btn-outline-brown" (click)="search=false; setTitle('Todos os Móveis')">
+        <i-x></i-x>
+        <span *ngIf="innerWidth > 470">Limpar filtro</span>
       </button>
     </div>
-    <input class="form-control ml-2" [(ngModel)]="query" placeholder="Pesquisar produtos..." aria-label="Search">
+    <input class="form-control ml-2" [(ngModel)]="query" placeholder="Pesquisar produtos..." aria-label="Search" 
+    (keyup.enter)="searchName()">
     <div class="input-group-append">
       <button class="btn btn-outline-brown" (click)="searchName()"><i-search></i-search></button>
     </div>

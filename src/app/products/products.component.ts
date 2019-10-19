@@ -14,8 +14,10 @@ export class ProductsComponent implements OnInit {
   search = false;
   query: string;
   constructor(private pService: ProductService) { }
+  public innerWidth: any;
 
   ngOnInit() {
+    this.innerWidth = window.innerWidth;
     this.pService.getProducts().subscribe(resp => {
       this.products = resp;
       this.filteredProducts = resp;
@@ -35,7 +37,6 @@ export class ProductsComponent implements OnInit {
     if (this.query.length >= 3) {
       this.title = 'Pesquisa: ' + this.query;
       this.filteredProducts = this.products.filter((value) => {
-        console.log(value.titulo);
         return value.titulo.toLowerCase().includes(this.query.toLowerCase()) ||
         value.descricao.toLowerCase().includes(this.query.toLowerCase());
       });
