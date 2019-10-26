@@ -12,6 +12,17 @@ import { join } from 'path';
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
+function forceSSL() {
+  return function (req: any, res: any, next: express.NextFunction) {
+      if (req.headers['x-forwarded-proto'] !== 'https') {
+          return res.redirect(
+              ['https://', req.get('Host'), req.url].join('')
+          );
+      }
+      next();
+  };
+}
+
 // Express server
 const app = express();
 
@@ -20,6 +31,8 @@ const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./server/main');
+
+app.forceSSL();
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
@@ -49,3 +62,4 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Node Express server listening on http://localhost:${PORT}`);
 });
+
